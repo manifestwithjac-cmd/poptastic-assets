@@ -1,0 +1,100 @@
+name: Render kit infographic
+
+# Renders a Poptastic Etsy listing infographic whenever a kit spec is added or
+# changed under kits/. The balloon panels come from OpenAI gpt-image-2 (needs the
+# OPENAI_API_KEY repo secret); the layout + text are drawn in code. The finished
+# 2000x2000 PNG is committed back to output/ and also uploaded as a build artifact.
+
+on:
+  push:
+    paths:
+      - "kits/**.json"
+  workflow_dispatch:
+    inputs:
+      kit:
+        description: "Kit slug to render (filename in kits/ without .json). Leave blank to render all kits."
+        required: false
+        default: ""
+      quality:
+        description: "Image quality: low (cheap draft), medium, high, auto"
+        required: false
+        default: "high"
+
+concurrency:
+  group: render-kit-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install --quiet pillow openai
+
+      - name: Determine kits to render
+        id: pick
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.kit }}" ]; then
+            echo "kits=kits/${{ github.event.inputs.kit }}.json" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "kits=$(ls kits/*.json | grep -v EXAMPLE | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
+          else
+            changed=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- 'kits/*.json' | grep -v EXAMPLE || true)
+            [ -z "$changed" ] && changed=$(git diff --name-only HEAD~1 HEAD -- 'kits/*.json' | grep -v EXAMPLE || true)
+            echo "kits=$(echo $changed | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Render
+        if: steps.pick.outputs.kits != ''
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          QUALITY: ${{ github.event.inputs.quality || 'high' }}
+        run: |
+          set -euo pipefail
+          if [ -z "${OPENAI_API_KEY:-}" ]; then
+            echo "::error::OPENAI_API_KEY secret is not set. Add it under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          mkdir -p output work
+          for kit in ${{ steps.pick.outputs.kits }}; do
+            slug=$(basename "$kit" .json)
+            echo "::group::Rendering $slug"
+            python3 scripts/generate_panels.py "$kit" --out "work/$slug/" --quality "$QUALITY"
+            python3 scripts/build_infographic.py "$kit" --panels "work/$slug/" --out "output/$slug.png"
+            echo "::endgroup::"
+          done
+
+      - name: Upload artifact
+        if: steps.pick.outputs.kits != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: kit-infographics
+          path: output/*.png
+          if-no-files-found: warn
+
+      - name: Commit rendered infographic
+        if: steps.pick.outputs.kits != ''
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/*.png || true
+          if git diff --cached --quiet; then
+            echo "No output changes to commit."
+          else
+            git commit -m "Render kit infographic(s) [skip ci]"
+            git push
+          fi

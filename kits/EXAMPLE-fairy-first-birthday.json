@@ -1,0 +1,51 @@
+{
+  "kit_slug": "fairy-first-birthday",
+  "header_title": "FAIRY FIRST BIRTHDAY BALLOON KIT",
+  "accent_hex": "#5B1A9E",
+  "page_bg_hex": "#F7F3F9",
+
+  "theme_prompt": "whimsical woodland fairy first birthday, soft pastel storybook feeling",
+  "room_prompt": "bright modern living room with warm oak floors, cream walls, soft natural daylight from a window out of frame",
+  "backdrop_prompt": "a single arched backdrop panel in soft blush pink, matte finish, standing on the floor against the wall",
+  "backdrop_text": "Fairy First Birthday",
+  "hero_extras": "two oversized mushroom foil balloons, one pink with white polka dots and one purple with white polka dots, and two large cream butterfly foil balloons tucked into the garland at different heights",
+  "florals_included": false,
+  "disclaimer": "*NO GREENERY OR FLORALS INCLUDED, BALLOONS ONLY.",
+
+  "palette": [
+    { "name": "Pastel Pink", "hex": "#F0A9BE" },
+    { "name": "Blossom (Purple)", "hex": "#B9A3D6" },
+    { "name": "Pale Yellow (Ivory)", "hex": "#F5E1B0" },
+    { "name": "Eucalyptus (Green)", "hex": "#9AA383" }
+  ],
+
+  "number_foil": {
+    "label": "Number 1",
+    "prompt": "a pale pink matte finish number 1 foil balloon, tall and upright"
+  },
+
+  "foils": [
+    { "label": "Pink Mushroom", "prompt": "a pink mushroom foil balloon with white polka dots on the cap and a cream stem" },
+    { "label": "Purple Mushroom", "prompt": "a purple mushroom foil balloon with white polka dots on the cap and a cream stem" },
+    { "label": "Butterfly", "prompt": "a cream and ivory butterfly foil balloon with soft pink wing detailing" }
+  ],
+
+  "panels": {
+    "tower": {
+      "title": "BALLOON TOWER",
+      "includes": ["8 Latex Balloons", "1 Foil Balloon (Number 1)"]
+    },
+    "foil_bouquet": {
+      "title": "FOIL BOUQUET",
+      "includes": ["4 Latex Balloons", "1 Foil Balloon (Number 1)", "Balloon Weight", "Ribbon"]
+    },
+    "latex_bouquet": {
+      "title": "BALLOON BOUQUET LATEX ONLY",
+      "includes": ["8 Latex Balloons", "Balloon Weight", "Ribbon"]
+    }
+  },
+
+  "font_bold": "assets/fonts/Outfit-Bold.ttf",
+  "font_regular": "assets/fonts/Outfit-Regular.ttf",
+  "font_script": "assets/fonts/Lora-Italic.ttf"
+}

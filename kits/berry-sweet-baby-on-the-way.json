@@ -1,0 +1,67 @@
+{
+  "kit_slug": "berry-sweet-baby-on-the-way",
+  "header_title": "BERRY SWEET BABY ON THE WAY BALLOON KIT",
+  "accent_hex": "#C24C74",
+  "page_bg_hex": "#FCF5F7",
+  "theme_prompt": "sweet strawberry-themed baby shower, soft and fresh berry-and-cream feeling, pastel not neon",
+  "room_prompt": "bright modern living room with warm oak floors, cream walls, soft natural daylight from a window out of frame",
+  "backdrop_prompt": "a single arched backdrop panel in soft baby pink, matte finish, standing on the floor against the wall",
+  "backdrop_text": "Berry Sweet Baby",
+  "hero_extras": "three pink strawberry foil balloons tucked into the garland at different heights, one near the top curve, one in the middle and one low near the floor cluster, each a plump pink strawberry shape with tiny seed dots and a small green leafy cap. Fresh green eucalyptus and leafy greenery sprigs are woven all the way through the garland between the balloons, trailing along the top curve and down the left edge so the greenery reads as part of the garland itself",
+  "florals_included": true,
+  "disclaimer": "*GREENERY INCLUDED AND WOVEN THROUGH THE GARLAND. NO FRESH FLORALS.",
+  "palette": [
+    {
+      "name": "Mac Pink",
+      "hex": "#E86A93"
+    },
+    {
+      "name": "Baby Pink",
+      "hex": "#F6C6D6"
+    },
+    {
+      "name": "White",
+      "hex": "#F4EFE9"
+    }
+  ],
+  "topper_foil": {
+    "label": "Pink Strawberry",
+    "prompt": "a plump pink strawberry foil balloon, soft pink berry body dotted with tiny seed marks and topped with a small green leafy cap, with a short inflation tab at the bottom",
+    "short_prompt": "a pink strawberry foil balloon with a small green leafy cap"
+  },
+  "foils": [
+    {
+      "label": "Pink Strawberry",
+      "prompt": "a plump pink strawberry foil balloon, soft pink berry body dotted with tiny seed marks and topped with a small green leafy cap, with a short inflation tab at the bottom"
+    }
+  ],
+  "panels": {
+    "tower": {
+      "title": "BALLOON TOWER",
+      "includes": [
+        "8 Latex Balloons",
+        "1 Foil Balloon (Pink Strawberry)"
+      ]
+    },
+    "foil_bouquet": {
+      "title": "FOIL BOUQUET",
+      "includes": [
+        "4 Latex Balloons",
+        "1 Foil Balloon (Pink Strawberry)",
+        "Balloon Weight",
+        "Ribbon"
+      ]
+    },
+    "latex_bouquet": {
+      "title": "BALLOON BOUQUET LATEX ONLY",
+      "includes": [
+        "8 Latex Balloons",
+        "Balloon Weight",
+        "Ribbon"
+      ]
+    }
+  },
+  "font_bold": "assets/fonts/Outfit-Bold.ttf",
+  "font_regular": "assets/fonts/Outfit-Regular.ttf",
+  "font_script": "assets/fonts/Lora-Italic.ttf"
+}

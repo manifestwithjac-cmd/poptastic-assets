@@ -1,0 +1,69 @@
+{
+  "kit_slug": "pink-yellow-lemon",
+  "header_title": "PINK & YELLOW LEMON BALLOON KIT",
+  "accent_hex": "#5B1A9E",
+  "page_bg_hex": "#FBF6F2",
+  "theme_prompt": "fresh pink lemonade stand party, sunny and citrusy, soft pastel not neon",
+  "room_prompt": "bright modern living room with warm oak floors, cream walls, soft natural daylight from a window out of frame",
+  "backdrop_prompt": "a single arched backdrop panel in soft pastel pink, matte finish, plain and unprinted, standing on the floor against the wall",
+  "backdrop_text": "",
+  "hero_extras": "three lemon slice foil balloons matching the attached lemon reference image tucked into the garland at different heights, one near the top curve, one in the middle and one low near the floor",
+  "florals_included": false,
+  "disclaimer": "*NO GREENERY OR FLORALS INCLUDED, BALLOONS ONLY.",
+  "palette": [
+    {
+      "name": "Pastel Pink",
+      "hex": "#F3AFC2"
+    },
+    {
+      "name": "Pastel Yellow",
+      "hex": "#F8E6A0"
+    },
+    {
+      "name": "Dusk White",
+      "hex": "#F0E9DF"
+    }
+  ],
+  "topper_foil": {
+    "label": "Lemon Slice",
+    "prompt": "a round lemon slice foil balloon, bright yellow rind with a white pith ring and yellow segments radiating from a pale centre, matching the attached lemon reference image exactly in shape, colour and segment pattern, with a short yellow inflation tab at the bottom",
+    "reference": "assets/refs/lemon-slice-foil.png",
+    "short_prompt": "a round lemon slice foil balloon matching the attached lemon reference image"
+  },
+  "foils": [
+    {
+      "label": "Lemon Slice",
+      "prompt": "a round lemon slice foil balloon, bright yellow rind with a white pith ring and yellow segments radiating from a pale centre, matching the attached lemon reference image exactly in shape, colour and segment pattern, with a short yellow inflation tab at the bottom",
+      "reference": "assets/refs/lemon-slice-foil.png"
+    }
+  ],
+  "panels": {
+    "tower": {
+      "title": "BALLOON TOWER",
+      "includes": [
+        "8 Latex Balloons",
+        "1 Foil Balloon (Lemon Slice)"
+      ]
+    },
+    "foil_bouquet": {
+      "title": "FOIL BOUQUET",
+      "includes": [
+        "4 Latex Balloons",
+        "1 Foil Balloon (Lemon Slice)",
+        "Balloon Weight",
+        "Ribbon"
+      ]
+    },
+    "latex_bouquet": {
+      "title": "BALLOON BOUQUET LATEX ONLY",
+      "includes": [
+        "8 Latex Balloons",
+        "Balloon Weight",
+        "Ribbon"
+      ]
+    }
+  },
+  "font_bold": "assets/fonts/Outfit-Bold.ttf",
+  "font_regular": "assets/fonts/Outfit-Regular.ttf",
+  "font_script": "assets/fonts/Lora-Italic.ttf"
+}

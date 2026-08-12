@@ -1,0 +1,7 @@
+LATEX REALISM — match the balloon surface quality of the attached reference photograph. Copy its latex texture, inflation shapes and light behaviour only. Do NOT copy its colors, theme, arrangement or setting.
+
+Avoid perfect spheres. Real inflated latex varies in width, height, orientation and inflation shape, some subtly oval or pear shaped, each balloon slightly different. Do not duplicate identical balloon geometry.
+
+Critical: do not place the same small white oval highlight on every balloon, this is a CGI artifact. Reflections change with orientation. Some balloons carry a broad soft window reflection, some an extremely subtle highlight, some almost none, some reflect neighboring balloons. Highlights differ in size, position, intensity, shape and softness. Use broad diffused environmental reflections.
+
+The surface must look like real latex photographed in soft diffused studio daylight, not rendered plastic. Visible neck and knot detail where balloons are tied. Natural overlaps where balloons touch, with slight compression at the contact points.
